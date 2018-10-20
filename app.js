@@ -1,16 +1,16 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var methodOverride = require('method-override')
-var passport = require('passport')
-var LocalStrategy = require('passport-local');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+// const methodOverride = require('method-override')
+// const passport = require('passport')
+// const LocalStrategy = require('passport-local');
 
-var app = express();
+const app = express();
 
 // Passport Configure
 app.use(require("express-session")({
@@ -18,8 +18,8 @@ app.use(require("express-session")({
   resave: false,
   saveUninitialized: false
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 const db = require('./models');
 
